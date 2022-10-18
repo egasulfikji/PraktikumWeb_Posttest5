@@ -1,0 +1,262 @@
+:root{
+    --main-color:#d3ad7f;
+    --border:.16px solid rgba(255, 255, 255, 0.3);
+}
+
+*{
+    font-family: 'Poppions', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; 
+    border:none;
+    text-decoration: none;
+}
+
+body{
+    background-color: #42032C;
+    color: black;
+}
+
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+
+
+section{
+    padding:2px 7%;
+}
+
+.heading{
+    font-size: 100px;
+    text-transform: uppercase;
+    color:transparent;
+    -webkit-text-stroke: .05rem var(--main-color);
+    letter-spacing: .32px;
+    text-align: center;
+    pointer-events: none;
+    position: relative;
+}
+
+.heading span{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color:var(--main-color);
+    font-size: 48px;
+}
+
+.header{
+    background: #bd5800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2px 7px;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 100px;
+}
+
+.header .navbar a{
+    margin:0 10px;
+    font-size: 20px;
+    color:#fff;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+}
+
+
+.home{
+    min-height: 850px;
+    display: flex;
+    align-items: center;
+    background:url(../images/home-img.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 960px;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #DEA057;
+}
+
+.home .content h2{
+    font-size: 20px;
+    padding:5px 0;
+    color:#42032C;
+}
+
+.gallery{
+    min-height: 850px;
+}
+
+.gallery button{
+    padding: 6px;
+    margin-left: 530px;
+    margin-top: 10px;
+}
+
+.gallery .gallery-slider{
+    padding:7px 0;
+}
+
+.gallery .gallery-slider .box{
+    border:var(--border);
+    border-radius: var(--border-radius);
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    padding:10px;
+}
+
+.gallery .gallery-slider .box img{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+    margin-bottom: .7rem;
+}
+
+.gallery .gallery-slider .box p{
+    font-size: 1.6rem;
+    color:var(--main-color);
+    padding:10px 0;
+    line-height: 1.8;
+}
+
+.gallery .gallery-slider .box h3{
+    font-size: 2.2rem;
+    color:var(--main-color);
+    line-height: 1.8;
+}
+
+.about{
+    min-height: 500px;
+    background:url(../images/book-bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.about .row{
+    display: flex;
+}
+
+.about .row .content p{
+    text-align: center;
+}
+
+.about .row .content h3{
+    text-align: center;;
+}
+
+.about .row .image img{
+    width: 150%;
+    align-items: center;
+    /* padding-right: 5px; */
+    padding: 10px 100px;
+    animation:aboutImage 6s linear infinite;
+}
+
+@keyframes aboutImage {
+    0%, 100%{
+        transform: scale(.9);
+        border-radius: var(--border-radius-hover);
+    }
+    50%{
+        transform: scale(.8);
+        border-radius: var(--border-radius);
+    }
+}
+
+.about .row .content h3{
+    padding: 30px 10px 20px 20px;
+    font-size: 15px;
+    color: #42032C;
+}
+.about .row .content p{
+    color:var(--main-color);
+    font-size: 14px;
+    line-height: 1.8;
+    padding: 0px 10px 20px 20px;
+    color: black;
+}
+
+.footer{
+    background: #bd5800;
+    text-align: center;
+}
+
+/* .footer .share{
+    padding:1re 0;
+} */
+
+.footer .share a{
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    font-size: 32px;
+    color:#fff;
+    border:var(--border);
+    margin:.48px;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:32px 0;
+    gap:16px;
+}
+
+.footer .links a{
+    padding:.112px 32px;
+    color:#fff;
+    border:var(--border);
+    font-size: 32px;
+}
+
+.footer .links a:hover{
+    background:var(--main-color);
+}
+
+
+/* media queries  */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem 32px;
+    }
+
+    section{
+        padding:32px;
+    }
+}
+
+@media (max-width:768px){
+    .header .navbar{
+        position: absolute;
+        top:100%; right: -100%;
+        background: #fff;
+        width: 480px;
+        height: calc(100vh - 9.5rem);
+    }
+}
